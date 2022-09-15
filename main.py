@@ -2,6 +2,7 @@ import numpy as np
 from brax import envs
 from brax.io import html
 import streamlit.components.v1 as components
+import brax.jumpy as jp
 
 env = envs.create(env_name='humanoid')
 state = env.reset(rng=jp.random_prngkey(seed=0))
