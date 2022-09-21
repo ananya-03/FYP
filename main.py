@@ -15,11 +15,11 @@ for i in range(100):
   action = jp.sin(i * jp.pi / 15 + jp.arange(0, env.action_size) * jp.pi)
   state = env.step(state, action)
   rollout.append(state)
-# jit compile env.step:
-# state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
+jit compile env.step:
+state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
 # %%time
-# for _ in range(100):
-#   state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
+for _ in range(100):
+  state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
   
 components.html(html.render(env.sys, [s.qp for s in rollout]),height=500)
 Image(image.render(env.sys, [s.qp for s in rollout], width=320, height=240))
