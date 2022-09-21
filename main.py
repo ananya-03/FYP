@@ -13,7 +13,7 @@ rollout = []
 for i in range(100):
   # wiggle sinusoidally with a phase shift per actuator
   action = jp.sin(i * jp.pi / 15 + jp.arange(0, env.action_size) * jp.pi)
-  state = env.step( action)
+  state = env.step(action)
   rollout.append(state)
   
 components.html(html.render(env.sys, [s.qp for s in rollout]),height=500)
