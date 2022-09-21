@@ -3,7 +3,7 @@
 import functools
 import time
 
-from IPython.display import HTML, Image 
+
 import gym
 
 import brax
