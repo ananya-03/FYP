@@ -15,7 +15,7 @@ for i in range(100):
   action = jp.sin(i * jp.pi / 15 + jp.arange(0, env.action_size) * jp.pi)
   state = env.step(state, action)
   rollout.append(state)
-jit compile env.step:
+# jit compile env.step:
 state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
 # %%time
 for _ in range(100):
