@@ -6,13 +6,7 @@ import time
 from IPython.display import HTML, Image 
 import gym
 
-try:
-  import brax
-except ImportError:
-  from IPython.display import clear_output 
-  !pip install git+https://github.com/google/brax.git@main
-  clear_output()
-  import brax
+import brax
 
 from brax import envs
 from brax import jumpy as jp
