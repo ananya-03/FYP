@@ -22,3 +22,4 @@ for _ in range(100):
   state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
   
 components.html(html.render(env.sys, [s.qp for s in rollout]))
+Image(image.render(env.sys, [s.qp for s in rollout], width=320, height=240))
