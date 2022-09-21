@@ -31,7 +31,6 @@ state = env.reset(rng=jp.random_prngkey(seed=0))
 components.html(html.render(env.sys, [state.qp]))
 
 
-%%time
 rollout = []
 for i in range(100):
   # wiggle sinusoidally with a phase shift per actuator
@@ -42,7 +41,7 @@ for i in range(100):
 # jit compile env.step:
 state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
 
-%%time
+
 for _ in range(100):
   state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
 
