@@ -16,10 +16,10 @@ for i in range(100):
   state = env.step(state, action)
   rollout.append(state)
 # jit compile env.step:
-state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
+# state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
 # %%time
-for _ in range(100):
-  state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
+# for _ in range(100):
+#   state = jax.jit(env.step)(state, jnp.ones((env.action_size,)))
   
 components.html(html.render(env.sys, [s.qp for s in rollout]))
 Image(image.render(env.sys, [s.qp for s in rollout], width=320, height=240))
