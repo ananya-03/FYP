@@ -6,7 +6,7 @@ import brax.jumpy as jp
 
 env = envs.create(env_name='humanoid')
 state = env.reset(rng=jp.random_prngkey(seed=0))
-components.html(html.render(env.sys, [state.qp]), height=500)
+# components.html(html.render(env.sys, [state.qp]), height=500)
 
 # %%time
 rollout = []
