@@ -3,6 +3,7 @@ from brax import envs
 from brax.io import html
 import streamlit.components.v1 as components
 import brax.jumpy as jp
+v = torch.ones(1, device='cuda')  # init torch cuda before jax
 
 env = envs.create(env_name='humanoid')
 state = env.reset(rng=jp.random_prngkey(seed=0))
