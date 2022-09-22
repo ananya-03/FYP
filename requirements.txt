@@ -1,2 +1,2 @@
-brax
+brax==0.0.13
 streamlit
